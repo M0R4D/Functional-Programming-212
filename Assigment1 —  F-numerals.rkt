@@ -6,7 +6,7 @@
 ;; 2 : (a(a(b (a(a(b c))) )))
 ;; 3 : (a(a(b (a(a(b (a(a(b c))) ))) )))
 ;; n : (a(a(b (a(a(b  .... (a(a(b c))) ))) ))) - n times (a(a(b ...)))
-;; fn: λaλbλc.(a(a(b ..n-times.. (a(a(b c))) )))
+;; fn: λaλbλc.(a(a(b [..n-times.. (a(a(b] c))) )))
 ;; etc..
 
 
@@ -42,6 +42,7 @@
 
 
 ;; fs+: the Successor function, gets an F-numeral and returns it's successor (in another simple words: apply it on (a(a(b ...))) )
+;; λnabc.(a(a(b(((n a)b)c)))) ;; where n is f-numeral
 ;; f0 to f1, f5 to f6, fn to fn+1
 (define fs+
   (lambda (fn)
@@ -52,28 +53,29 @@
 
 
 ;; fdouble: doubled the F-numerl
+;; λnabc.(((n a)b)(((n a)b)c)) ;; where n is f-numeral
 ;; f0 to f0, f5 to f10, fn to f2*n
 (define fdouble
   (lambda (fn)
     (lambda (a)
       (lambda (b)
         (lambda (c)
-          ;;(((fn b) a) c))))))
           (((fn a) b) (((fn a) b) c)))))))
 
 
 ;; ftriplee: tripled the F-numerl
+;; λnabc.(((n a)b)(((fn a)b)(((n a)b)c))) ;; where n is f-numeral
 ;; f0 to f0, f5 to f15, fn to f3*n
 (define ftriple
   (lambda (fn)
     (lambda (a)
       (lambda (b)
         (lambda (c)
-          ;;(((fn b) b) c))))))
           (((fn a) b) (((fn a) b) (((fn a) b) c))))))))
 
 
 ;; f+: Plus Function - adding two F-numerals and returns the result
+;; λnmabc.(((n a) b)(((m a)b)c)) ;; where n,m are f-numerals
 (define f+
   (lambda (fn)
     (lambda (fm)
@@ -84,6 +86,7 @@
 
 
 ;; f*: Multiply Function - multiply two F-numerals and returns the result
+;; λnmabc.((((n I)((m a)b))c) ;; where n,m are f-numerals and I is the Identity function
 (define f*
   (lambda (fn)
     (lambda (fm)
@@ -95,6 +98,7 @@
 
 ;; f^: Power Function - gets two F-numerals fn, fm and returns the result of fn^fm
 ;; to be honest, this function makes a lot of problems to us, and until the last minute we did not success how to implement it properly
+;; λnmabc.-------------  :((  ;; where n,m are f-numerals
 (define f^
   (lambda (fn)
     (lambda (fm)
