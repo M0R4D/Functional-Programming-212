@@ -1,5 +1,5 @@
 # Functional-Programming-212
-Introduction to Functional Programming course assignments with my partner <b><a href="#">Matan Nagar</a></b> ..
+Introduction to Functional Programming course assignments with my partner <b><a href="https://github.com/matannag">Matan Nagar</a></b> ..
 In this course we learn and practice more with Functional Programming Paradigm
 
 <h1>Assignment 1 — F-numerals</h1>
