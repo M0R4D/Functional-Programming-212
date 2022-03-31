@@ -2,7 +2,8 @@
 Introduction to Functional Programming course assignments with my partner <b><a href="https://github.com/matannag">Matan Nagar</a></b> ..
 In this course we learn and practice more with Functional Programming Paradigm
 
-<h1>Assignment 1 — F-numerals</h1>
+<h1>Assignment 1 — F-Numerals</h1>
+<h2>Grade 95</h2>
 <p>The main porpuse of tis assignment is to be more familiar with Lambda-Calculus (λ-Calculus)</p>
 <p>F-numerals is a perverse variation of Church Numerals (Alonzo Church), in this version the Numerals defined as: </p>
 <p style="margin-left:30px;">f0:= λaλbλc.c</p>
